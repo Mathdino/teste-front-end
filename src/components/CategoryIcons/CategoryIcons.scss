@@ -1,0 +1,124 @@
+.category-icons {
+  background-color: var(--background-light);
+  padding: 40px 0;
+}
+
+.category-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.category-card {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 24px 16px;
+  text-align: center;
+  box-shadow: var(--shadow-light);
+  transition: var(--transition);
+  cursor: pointer;
+  border: 2px solid transparent;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-medium);
+  }
+  
+  &.active {
+    border-color: var(--primary-blue);
+    
+    .category-icon {
+      color: var(--primary-blue);
+    }
+    
+    .category-name {
+      color: var(--primary-blue);
+      font-weight: 600;
+    }
+  }
+}
+
+.category-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  display: block;
+  transition: var(--transition);
+}
+
+.category-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-dark);
+  text-align: center;
+  line-height: 1.3;
+  transition: var(--transition);
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .category-container {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 16px;
+  }
+  
+  .category-card {
+    padding: 20px 12px;
+  }
+  
+  .category-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+  }
+  
+  .category-name {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .category-icons {
+    padding: 30px 0;
+  }
+  
+  .category-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    padding: 0 15px;
+  }
+  
+  .category-card {
+    padding: 16px 8px;
+  }
+  
+  .category-icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+  }
+  
+  .category-name {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  
+  .category-card {
+    padding: 20px 16px;
+  }
+  
+  .category-icon {
+    font-size: 36px;
+    margin-bottom: 12px;
+  }
+  
+  .category-name {
+    font-size: 13px;
+  }
+}
