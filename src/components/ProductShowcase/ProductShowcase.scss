@@ -26,34 +26,53 @@
 
 .showcase-tabs {
   display: flex;
-  gap: 8px;
+  gap: 0;
   margin-bottom: 40px;
-  border-bottom: 2px solid var(--border-light);
   overflow-x: auto;
-  padding-bottom: 8px;
   justify-content: center;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 4px;
 }
 
 .tab-button {
-  background: none;
-  border: none;
-  padding: 12px 20px;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text-light);
-  cursor: pointer;
-  transition: var(--transition);
-  white-space: nowrap;
-  border-bottom: 3px solid transparent;
+    background-color: transparent;
+    border: 1px solid #e0e0e0;
+    padding: 12px 65px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #666;
+    cursor: pointer;
+    transition: var(--transition);
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+  
+  &:first-child {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+  
+  &:last-child {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+  
+  &:not(:first-child) {
+    border-left: none;
+  }
   
   &:hover {
+    background-color: #f0f0f0;
     color: var(--primary-blue);
   }
   
   &.active {
-    color: white;
-    background-color: var(--primary-blue);
-    border-bottom-color: var(--primary-blue);
+    color: var(--primary-blue);
+    background-color: white;
+    position: relative;
+    z-index: 1;
   }
 }
 
@@ -89,14 +108,6 @@
     opacity: 0.5;
     cursor: not-allowed;
   }
-  
-  &.prev {
-    transform: rotate(90deg);
-  }
-  
-  &.next {
-    transform: rotate(-90deg);
-  }
 }
 
 .product-grid {
@@ -115,6 +126,9 @@
   transition: var(--transition);
   cursor: pointer;
   border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   
   &:hover {
     transform: translateY(-4px);
@@ -137,6 +151,16 @@
 
 .product-info {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.product-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .product-description {
@@ -153,6 +177,8 @@
 
 .product-pricing {
   margin-bottom: 20px;
+  margin-top: auto;
+  text-align: left;
 }
 
 .old-price {

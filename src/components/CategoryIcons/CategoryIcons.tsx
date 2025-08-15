@@ -3,14 +3,13 @@ import './CategoryIcons.scss';
 
 const CategoryIcons: React.FC = () => {
   const categories = [
-    { id: 'tecnologia', name: 'Tecnologia', icon: '💻', active: true },
-    { id: 'supermercado', name: 'Supermercado', icon: '🛒' },
-    { id: 'bebidas', name: 'Bebidas', icon: '🥤' },
-    { id: 'ferramentas', name: 'Ferramentas', icon: '🔧' },
-    { id: 'saude', name: 'Saúde', icon: '❤️' },
-    { id: 'esportes', name: 'Esportes e Fitness', icon: '🏃' },
-    { id: 'moda', name: 'Moda', icon: '👗' },
-    { id: 'outros', name: 'Outros', icon: '📦' }
+    { id: 'tecnologia', name: 'Tecnologia', icon: '/pc.png', active: true },
+    { id: 'supermercado', name: 'Supermercado', icon: '/supermercados.png' },
+    { id: 'bebidas', name: 'Bebidas', icon: '/bebidas.png' },
+    { id: 'ferramentas', name: 'Ferramentas', icon: '/ferramentas.png' },
+    { id: 'saude', name: 'Saúde', icon: '/saude.png' },
+    { id: 'esportes', name: 'Esportes e Fitness', icon: '/esportes.png' },
+    { id: 'moda', name: 'Moda', icon: '/moda.png' },
   ];
 
   return (
@@ -21,7 +20,9 @@ const CategoryIcons: React.FC = () => {
             key={category.id} 
             className={`category-card ${category.active ? 'active' : ''}`}
           >
-            <div className="category-icon">{category.icon}</div>
+            <div className="category-icon">
+              <img src={category.icon} alt={category.name} />
+            </div>
             <span className="category-name">{category.name}</span>
           </div>
         ))}

@@ -1,0 +1,288 @@
+// Classe para acessibilidade - esconde visualmente mas mantém para leitores de tela
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.footer {
+  width: 100%;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+  background-color: #271C47;
+  padding: 40px 0;
+  color: white;
+}
+
+.newsletter-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.newsletter-content {
+  flex: 1;
+}
+
+.newsletter-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: white;
+}
+
+.newsletter-subtitle {
+  font-size: 14px;
+  margin: 0;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+.newsletter-form {
+  flex: 1;
+  max-width: 500px;
+}
+
+.form-group {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.form-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+  
+  &::placeholder {
+    color: #999;
+  }
+}
+
+.subscribe-btn {
+  background-color: #FCD34D;
+  color: #1F2937;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  
+  &:hover {
+    background-color: #F59E0B;
+  }
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+}
+
+.checkbox-label {
+  font-size: 12px;
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+/* Footer Links Section */
+.footer-links-section {
+  background-color: #F3F4F6;
+  padding: 60px 0 20px 0;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-logo {
+  width: 120px;
+  height: auto;
+}
+
+.footer-description {
+  font-size: 14px;
+  color: #6B7280;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+}
+
+.social-link {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+  
+  &:hover {
+    opacity: 0.7;
+  }
+  
+  img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.link-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.column-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1F2937;
+  margin: 0;
+}
+
+.link-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.link-list a {
+  color: #6B7280;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: #1F2937;
+  }
+}
+
+.footer-bottom {
+  border-top: 1px solid #E5E7EB;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.copyright {
+  font-size: 12px;
+  color: #9CA3AF;
+  margin: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .newsletter-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  
+  .newsletter-content {
+    text-align: center;
+  }
+  
+  .newsletter-title {
+    font-size: 20px;
+  }
+  
+  .form-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .form-input {
+    width: 100%;
+  }
+  
+  .subscribe-btn {
+    width: 100%;
+    padding: 14px 24px;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .footer-brand {
+    align-items: center;
+  }
+  
+  .footer-links {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: left;
+  }
+  
+  .link-column {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .newsletter-section {
+    padding: 30px 0;
+  }
+  
+  .footer-links-section {
+    padding: 40px 0 20px 0;
+  }
+  
+  .newsletter-title {
+    font-size: 18px;
+  }
+  
+  .newsletter-subtitle {
+    font-size: 13px;
+  }
+}

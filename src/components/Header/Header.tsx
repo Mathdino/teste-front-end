@@ -1,23 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Header.scss';
 
 const Header: React.FC = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
     <header className="header">
       {/* Barra superior com informações */}
       <div className="header-top">
         <div className="header-info">
           <div className="info-item">
-            <span className="icon">✓</span>
-            <span>Compra 100% segura</span>
+            <img src="/compra.png" alt="Compra segura" className="info-icon" />
+            <span>Compra <strong>100% segura</strong></span>
           </div>
           <div className="info-item">
-            <span className="icon">🚚</span>
-            <span>Frete grátis acima de R$ 200</span>
+            <img src="/frete.png" alt="Frete grátis" className="info-icon" />
+            <span><strong>Frete grátis</strong> acima de R$ 200</span>
           </div>
           <div className="info-item">
-            <span className="icon">💳</span>
-            <span>Parcele suas compras</span>
+            <img src="/parcele.png" alt="Parcele" className="info-icon" />
+            <span><strong>Parcele</strong> suas compras</span>
           </div>
         </div>
       </div>
@@ -26,20 +32,30 @@ const Header: React.FC = () => {
       <div className="header-main">
         <div className="header-content">
           <div className="logo">
-            <span className="logo-icon">e</span>
-            <span className="logo-text">econverse</span>
+            <img src="/logo.png" alt="Econverse" className="logo-image" />
           </div>
           
-          <div className="search-container">
+          <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>
+            <span className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
+          
+          <form className="search-container" role="search" aria-label="Buscar produtos">
+            <label htmlFor="search-input" className="sr-only">Buscar produtos</label>
             <input 
-              type="text" 
+              id="search-input"
+              type="search" 
               placeholder="O que você está buscando?" 
               className="search-input"
+              aria-label="Campo de busca"
             />
-            <button className="search-button">
-              <span className="search-icon">🔍</span>
+            <button type="submit" className="search-button" aria-label="Executar busca">
+              <img src="/MagnifyingGlass.png" alt="" className="search-icon" />
             </button>
-          </div>
+          </form>
 
           <div className="header-actions">
             <button className="action-button">
@@ -59,7 +75,7 @@ const Header: React.FC = () => {
       </div>
 
       {/* Barra de navegação */}
-      <nav className="header-navigation">
+      <nav className={`header-navigation ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
         <ul className="nav-list">
           <li className="nav-item">
             <a href="#todas-categorias" className="nav-link">TODAS CATEGORIAS</a>
@@ -79,8 +95,11 @@ const Header: React.FC = () => {
           <li className="nav-item">
             <a href="#ofertas" className="nav-link active">OFERTAS DO DIA</a>
           </li>
-          <li className="nav-item">
-            <a href="#assinatura" className="nav-link">ASSINATURA</a>
+          <li className="nav-item assinature">
+            <a href="#assinatura" className="nav-link">
+              <img src="/CrownSimple.png" alt="Crown" className="nav-icon" />
+              ASSINATURA
+            </a>
           </li>
         </ul>
       </nav>

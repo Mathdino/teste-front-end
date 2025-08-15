@@ -10,12 +10,6 @@ interface ProductShowcaseProps {
 const ProductShowcase: React.FC<ProductShowcaseProps> = ({ products, onProductClick }) => {
   const [currentPage, setCurrentPage] = useState(0);
 
-  // Debug: verificar se os produtos estão chegando
-  useEffect(() => {
-    console.log('ProductShowcase - Produtos recebidos:', products);
-    console.log('ProductShowcase - Quantidade de produtos:', products.length);
-  }, [products]);
-
   const tabs = [
     { id: 'celular', name: 'CELULAR', active: true },
     { id: 'acessorios', name: 'ACESSÓRIOS' },
@@ -31,11 +25,7 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ products, onProductCl
   const endIndex = startIndex + productsPerPage;
   const currentProducts = products.slice(startIndex, endIndex);
 
-  // Debug: verificar paginação
-  useEffect(() => {
-    console.log('ProductShowcase - Página atual:', currentPage);
-    console.log('ProductShowcase - Produtos da página atual:', currentProducts);
-  }, [currentPage, currentProducts]);
+
 
   const nextPage = () => {
     setCurrentPage((prev) => (prev + 1) % totalPages);
@@ -115,16 +105,18 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ products, onProductCl
                   <img src={product.photo} alt={product.productName} />
                 </div>
                 <div className="product-info">
-                  <p className="product-description">
-                    {product.descriptionShort}
-                  </p>
-                  <div className="product-pricing">
-                    <span className="old-price">{calculateOldPrice(product.price)}</span>
-                    <span className="new-price">{formatPrice(product.price)}</span>
-                    <span className="installment-info">
-                      ou 2x de {calculateInstallment(product.price)} sem juros
-                    </span>
-                    <span className="free-shipping">Frete grátis</span>
+                  <div className="product-content">
+                    <p className="product-description">
+                      {product.descriptionShort}
+                    </p>
+                    <div className="product-pricing">
+                      <span className="old-price">{calculateOldPrice(product.price)}</span>
+                      <span className="new-price">{formatPrice(product.price)}</span>
+                      <span className="installment-info">
+                        ou 2x de {calculateInstallment(product.price)} sem juros
+                      </span>
+                      <span className="free-shipping">Frete grátis</span>
+                    </div>
                   </div>
                   <button className="buy-button">COMPRAR</button>
                 </div>
