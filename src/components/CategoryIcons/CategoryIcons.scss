@@ -73,7 +73,7 @@
   transition: var(--transition);
 }
 
-/* Responsividade */
+
 @media (max-width: 1024px) {
   .category-container {
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));

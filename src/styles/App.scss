@@ -4,7 +4,7 @@
   flex-direction: column;
 }
 
-/* Animações globais */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -34,7 +34,7 @@
   }
 }
 
-/* Classes de animação */
+
 .fade-in {
   animation: fadeIn 0.6s ease-out;
 }
@@ -47,7 +47,7 @@
   animation: pulse 2s infinite;
 }
 
-/* Responsividade */
+
 @media (max-width: 1024px) {
   .app {
     padding: 0;

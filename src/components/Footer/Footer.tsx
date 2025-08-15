@@ -4,7 +4,7 @@ import './Footer.scss';
 const Footer: React.FC = () => {
   return (
     <footer className="footer">
-      {/* Newsletter Section */}
+
       <section className="newsletter-section" aria-label="Newsletter">
         <div className="newsletter-container">
           <div className="newsletter-content">
@@ -45,11 +45,11 @@ const Footer: React.FC = () => {
         </div>
       </section>
 
-      {/* Footer Links Section */}
+
       <div className="footer-links-section">
         <div className="footer-container">
           <div className="footer-content">
-            {/* Logo and Description */}
+
             <div className="footer-brand">
               <img src="/logo.png" alt="Converse" className="footer-logo" />
               <p className="footer-description">
@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
               </div>
             </div>
 
-            {/* Footer Links */}
+
             <nav className="footer-links" aria-label="Links do rodapé">
               <div className="link-column">
                 <h4 className="column-title">Institucional</h4>
@@ -99,7 +99,7 @@ const Footer: React.FC = () => {
             </nav>
           </div>
 
-          {/* Copyright */}
+
           <div className="footer-bottom">
             <p className="copyright">
               ©Matheus Bernardino | Desenvolvedor Front-End

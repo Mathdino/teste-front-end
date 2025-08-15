@@ -43,7 +43,7 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ products, onProductCl
   };
 
   const calculateOldPrice = (price: number) => {
-    // Simula um preço antigo 10% maior
+
     return new Intl.NumberFormat('pt-BR', {
       style: 'currency',
       currency: 'BRL'
@@ -51,14 +51,14 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ products, onProductCl
   };
 
   const calculateInstallment = (price: number) => {
-    const installmentPrice = price / 200; // Divide por 2 para 2x
+    const installmentPrice = price / 200;
     return new Intl.NumberFormat('pt-BR', {
       style: 'currency',
       currency: 'BRL'
     }).format(installmentPrice / 100);
   };
 
-  // Se não há produtos, mostrar mensagem de carregamento
+
   if (products.length === 0) {
     return (
       <section className="product-showcase">

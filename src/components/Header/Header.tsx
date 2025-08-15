@@ -10,7 +10,7 @@ const Header: React.FC = () => {
 
   return (
     <header className="header">
-      {/* Barra superior com informações */}
+
       <div className="header-top">
         <div className="header-info">
           <div className="info-item">
@@ -28,7 +28,7 @@ const Header: React.FC = () => {
         </div>
       </div>
 
-      {/* Barra principal com logo e busca */}
+
       <div className="header-main">
         <div className="header-content">
           <div className="logo">
@@ -74,7 +74,7 @@ const Header: React.FC = () => {
         </div>
       </div>
 
-      {/* Barra de navegação */}
+
       <nav className={`header-navigation ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
         <ul className="nav-list">
           <li className="nav-item">
